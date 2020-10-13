@@ -10,12 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
- *= require_bootstrap
- *= require_bootstrap.min
- *= require_font-awesome
- *= require_font-awesome.min
- *= require_grayscale
-
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "grayscale";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");

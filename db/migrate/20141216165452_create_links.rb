@@ -1,4 +1,6 @@
-class CreateLinks < ActiveRecord::Migration
+# frozen_string_literal: true
+
+class CreateLinks < ActiveRecord::Migration[5.2]
   def change
     create_table :links do |t|
       t.string :original_url

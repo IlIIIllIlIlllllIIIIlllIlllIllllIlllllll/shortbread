@@ -1,44 +1,57 @@
 
-Shortbread
-====
+# Shortbread
 
-A delicious URL shortener. See it live at http://shrtb.red.
+A delicious URL shortener, elegantly made with Ruby on Rails! See it live at http://shrtb.red.
 
-Setup
+## How to run locally
 
-Shortbread is made with Ruby on Rails.
-
-Install rails:
-
-``` ruby
-sudo gem install rails
+Install the dependencies specified in the Gemfile
+```shell
+$ sudo bundle install
 ```
 
-Set up your gems:
+Start a Homebrew PostgreSQL server
+```shell
+$ brew install postgresql
+$ brew services start postgresql
 
-``` ruby
-bundle install
+$ export POSTGRES_USER=$(whoami)
 ```
 
-Set up the database:
-
-``` ruby
-rake db:migrate
+Create, migrate, and seed the PostgreSQL databases
+```shell
+$ rails db:create db:migrate db:seed
 ```
 
-This app uses Postgres for the database.
+Run the test suite with `rspec`
+```shell
+$ rspec
+```
 
-You'll need a domain to point shortened links to. In link.rb, replace `URL_BASE = "shrtb.red/"` with whatever domain you want to serve shortened URLs from.
+Start Rails server
+```shell
+$ export URL_BASE=localhost:3000/
+
+$ rails server
+```
+
+## How to run locally with docker-compose
+
+Use rake to orchestrate the containres
+```shell
+$ rails docker:start
+
+$ rails docker:stop
+```
+
+## How to build and push Docker images
+
+Use rake to build and push the Docker images
+```shell
+$ rake docker:push
+```
+---
 
 Shortened URLs are case-sensitive, so bear that in mind.
 
 The site tracks the top 100 most visited links. You can adjust this in the constant `MOST_VISITED_LIMIT` in link.rb.
-
-Test Suite
-
-This app uses Rspec. To run tests on the Link model, simply type:
-
-``` ruby
-rspec
-```
-

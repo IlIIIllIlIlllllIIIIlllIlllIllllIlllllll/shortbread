@@ -1,0 +1,8 @@
+# disable rubocop for db/schema.rb because it's auto-generated
+AllCops:
+  Exclude:
+    - db/schema.rb
+
+# set max line length to 120 characters
+Layout/LineLength:
+  Max: 120

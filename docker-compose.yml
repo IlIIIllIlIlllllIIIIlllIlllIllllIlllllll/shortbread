@@ -1,0 +1,29 @@
+version: "3.3"
+
+services:
+  shrtbred:
+    image: iliiillilillllliiiilllilllilll/shrtbred:latest
+    restart: always
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: shrtbred
+      POSTGRES_PASSWORD: shrtbred
+      URL_BASE: localhost:3000/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:12.4-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: shrtbred
+      POSTGRES_PASSWORD: shrtbred
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:

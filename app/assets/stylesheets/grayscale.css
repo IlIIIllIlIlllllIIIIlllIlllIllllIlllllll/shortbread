@@ -260,7 +260,8 @@ a:focus {
     color: #000;
     margin-top: 100px;
     margin-left: 2%;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    /* disabling background.... it looks really ugly >.> */
+    /* background: url(../img/downloads-bg.jpg) no-repeat center center scroll; */
     background-color: #fff;
     /*overflow: scroll;*/
     -webkit-background-size: cover;
