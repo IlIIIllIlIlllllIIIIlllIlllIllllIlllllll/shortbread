@@ -9,7 +9,8 @@ branches:
   - development
   - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
-install: []
+install:
+- echo true
 
 script:
 - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
