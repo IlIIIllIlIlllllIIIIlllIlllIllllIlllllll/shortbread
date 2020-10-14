@@ -9,8 +9,6 @@ branches:
   - development
   - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
-install: skip
-
 script:
 - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
 - ./.travis.sh
