@@ -43,16 +43,16 @@ $ rails server
 
 Use rake to orchestrate the containres
 ```shell
-$ rails docker:start
+$ make docker-start
 
-$ rails docker:stop
+$ make docker-stop
 ```
 
 ## How to build and push Docker images
 
 Use rake to build and push the Docker images
 ```shell
-$ rake docker:push
+$ make docker-push
 ```
 
 When the docker images are pushed, they will be tagged with latest, the git commit sha, and a [tag](https://github.com/IlIIIllIlIlllllIIIIlllIlllIllllIlllllll/shortbread/tags) if one exists for the commit.
