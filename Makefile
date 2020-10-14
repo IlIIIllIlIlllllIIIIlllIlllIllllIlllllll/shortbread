@@ -10,11 +10,11 @@ docker-build:
 	docker build --tag $(IMAGE)-nginx:latest --target nginx .
 
 	docker tag $(IMAGE):latest $(IMAGE):$(GIT_COMMIT)
-	docker tag $(IMAGE)-nginx:latest $(IMAGE):$(GIT_COMMIT)
+	docker tag $(IMAGE)-nginx:latest $(IMAGE)-nginx:$(GIT_COMMIT)
 
 ifneq ($(GIT_TAG),)
 	docker tag $(IMAGE):latest $(IMAGE):$(GIT_TAG)
-	docker tag $(IMAGE)-nginx:latest $(IMAGE):$(GIT_TAG)
+	docker tag $(IMAGE)-nginx:latest $(IMAGE)-nginx:$(GIT_TAG)
 endif
 
 .PHONY: docker-push
