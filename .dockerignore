@@ -1,3 +1,5 @@
 .dockerignore
+.travis.*
 Dockerfile
 docker-compose.yml
+Makefile
